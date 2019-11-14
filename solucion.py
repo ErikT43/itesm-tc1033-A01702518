@@ -30,7 +30,7 @@ def construir_diccionario():
     print (lineas)
     return porcentajes,lineas
 
-    def totalmeses():
+def totalmeses():
     porcentajes,lineas=construir_diccionario()
     total ={}
     for mes in lineas.keys():
@@ -39,12 +39,16 @@ def construir_diccionario():
             porcentaje=((lineas[mes][matricula]/porcentajes[mes])*100)
             if porcentaje>=20:
                 total[mes][matricula]=porcentaje
-
-
+    
     return total,mes,matricula
 
-   
+def escribir():
+    archivo=open("resultados.csv","w+")
+    archivo.write("Mes, País, Total ")
+    for mes in total:
+        archivo.write(mes)
+        archivo.write("\n")
 
+def predecir(matricula):
+    diccionario=construir_diccionario()
 
-
-#Codigo Principal#
