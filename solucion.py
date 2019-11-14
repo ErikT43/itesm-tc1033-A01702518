@@ -9,7 +9,7 @@ def construir_diccionario():
         for l in lines:
             datos = l.split(",")#[matrícula, salida, llegada, pasajeros[]]
             matricula = datos[1]
-            matriculas = linea.split(";")
+            matriculas = matricula.split(";")
             mes = datos[2].replace("[", "")
             mes=str(mes[3:5])
             
@@ -29,6 +29,19 @@ def construir_diccionario():
     print(porcentajes)
     print (lineas)
     return porcentajes,lineas
+
+    def totalmeses():
+    porcentajes,lineas=construir_diccionario()
+    total ={}
+    for mes in lineas.keys():
+        total[mes]={}
+        for matricula in lineas[mes].keys():
+            porcentaje=((lineas[mes][matricula]/porcentajes[mes])*100)
+            if porcentaje>=20:
+                total[mes][matricula]=porcentaje
+
+
+    return total,mes,matricula
 
    
 
