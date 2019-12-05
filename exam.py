@@ -97,12 +97,12 @@ class File_Interactions:
         return total_per_month, total_per_month_per_country  
 
 class Model_data:
-    def __init__(self, _month, _country, _flights_percentage):
-        self.month = _month
-        self.contry = _country
-        self.flights_percentage = _flights_percentage
+    def __init__(self, , _total_per_month, _total_per_month_per_country, _percentages):
+        self.total_per_month = _total_per_month
+        self.total_per_month_per_country = _total_per_month_per_country
+        self.percentages = _percentages
 
-    def compute_percentages(total_per_month, total_per_month_per_country):
+    def compute_percentages(self):
         percentages = {} 
 
         for month in total_per_month_per_country:  
@@ -117,7 +117,7 @@ class Model_data:
         print("Percentages: ", percentages)
         return percentages  
     
-    def write_results(percentages):
+    def write_results(self):
         results_file = open("results.csv", "w") 
         results_file.write("Mes, País, %% de vuelos\n")  
         for month in percentages: 
