@@ -126,5 +126,10 @@ class Model_data:
                 results_file.write(line)  
         results_file.close()  
 
-
-
+if __name__ == "__main__":
+    input_data = File_Interactions()
+    input_data.read_input_file() 
+    input_data.process_input_data(input_data)  
+    percentages = Model_data()
+    percentages.compute_percentages(total_per_month, total_per_month_per_country) 
+    percentages.write_results(percentages) 
