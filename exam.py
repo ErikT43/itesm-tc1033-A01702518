@@ -1,5 +1,5 @@
 class File_Interactions:
-    def __init__(self, _id, _departure, _arriving, _number_of_passengers)
+    def __init__(self, _id, _departure, _arriving, _number_of_passengers):
         self.id = _id 
         self.departure = _departure
         self.arriving = _arriving
@@ -97,7 +97,7 @@ class File_Interactions:
         return total_per_month, total_per_month_per_country  
 
 class Model_data:
-    def __init__(self, _month, _country, _flights_percentage)
+    def __init__(self, _month, _country, _flights_percentage):
         self.month = _month
         self.contry = _country
         self.flights_percentage = _flights_percentage
